@@ -1,3 +1,4 @@
+
 ;; =========================================================
 ;; 環境設定
 ;; =========================================================
@@ -60,59 +61,18 @@
 (setq scroll-step 1)
 
 ;; =========================================================
-;; キーバインド
-;; =========================================================
-
-;; シフト + 矢印で範囲選択
-(setq pc-select-selection-keys-only t)
-(pc-selection-mode 1)
-
-;; Macのキーバインドを使う
-(mac-key-mode 1)
-(setq mac-option-modifier 'meta)
-
-;; ウィンドウ系の操作をコマンドキーで
-(global-set-key (kbd "A-0") 'delete-window)
-(global-set-key (kbd "A-1") 'delete-other-window)
-(global-set-key (kbd "A-2") 'split-window-vertically)
-(global-set-key (kbd "A-3") 'split-window-horizontally)
-
-
-;; =========================================================
-;; テキスト編集
-;; =========================================================
-
-;; A-d (Command-d)で行複製
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (newline)
-  (yank))
-
-(global-set-key (kbd "A-d") 'duplicate-line)
-
-;; A-e　で行削除
-(defun kill-whole-line ()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (delete-char 1)
-  )
-
-(global-set-key (kbd "A-e") 'kill-whole-line)
-
-;; 選択してC-M-Tabでインデント
-(global-set-key (kbd "<C-M-tab>") 'indent-region)
-
-;; =========================================================
 ;; 画面の色、大きさ設定
 ;; =========================================================
 
 ;; フォント設定
 (if (eq window-system 'mac) (require 'carbon-font))
-(fixed-width-set-fontset "Osaka" 12)
+;;(fixed-width-set-fontset "Osaka" 12)
+
+(set-fontset-font
+  (frame-parameter nil 'font)
+    'japanese-jisx0208
+    '("Hiragino Kaku Gothic ProN" . "iso10646-1"))
+
 (setq fixed-width-rescale nil)
 
 ;; ウィンドウ設定
@@ -156,6 +116,95 @@
     (t ())) "*Face used by hl-line.")
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
+
+;;(global-set-key (kbd "C-i") 'goto-line)
+
+;; =========================================================
+;;  トラックパッドスクロール設定
+;; =========================================================
+
+(defun scroll-down-with-lines ()
+  "" (interactive) (scroll-down 3))
+(defun scroll-up-with-lines ()
+  "" (interactive) (scroll-up 3))
+(global-set-key [wheel-up] 'scroll-down-with-lines)
+(global-set-key [wheel-down] 'scroll-up-with-lines)
+(global-set-key [double-wheel-up] 'scroll-down-with-lines)
+(global-set-key [double-wheel-down] 'scroll-up-with-lines)
+(global-set-key [triple-wheel-up] 'scroll-down-with-lines)
+(global-set-key [triple-wheel-down] 'scroll-up-with-lines)
+
+;; =========================================================
+;; キーバインド
+;; =========================================================
+
+;; シフト + 矢印で範囲選択
+(setq pc-select-selection-keys-only t)
+;;(pc-selection-mode 1)
+
+;; Macのキーバインドを使う
+;;(mac-key-mode 1)
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+
+;; ウィンドウ系の操作をコマンドキーで
+(global-set-key (kbd "s-0") 'delete-window)
+(global-set-key (kbd "s-1") 'delete-other-window)
+(global-set-key (kbd "s-2") 'split-window-vertically)
+(global-set-key (kbd "s-3") 'split-window-horizontally)
+
+
+;; =========================================================
+;; テキスト編集
+;; =========================================================
+
+;; A-d (Command-d)で行複製
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (newline)
+  (yank))
+
+(global-set-key (kbd "s-d") 'duplicate-line)
+
+;; A-e　で行削除
+(defun kill-whole-line ()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (delete-char 1)
+  )
+
+(global-set-key (kbd "s-e") 'kill-whole-line)
+
+(global-set-key (kbd "s-w") 'kill-buffer)
+
+;; 選択してC-M-Tabでインデント
+(global-set-key (kbd "<C-M-tab>") 'indent-region)
+
+;; 確認なしでファイル再読み込み
+(defun revert-buffer-no-confirm (&optional force-reverting)
+  "Interactive call to revert-buffer. Ignoring the auto-save
+ file and not requesting for confirmation. When the current buffer
+ is modified, the command refuses to revert it, unless you specify
+ the optional argument: force-reverting to true."
+  (interactive "P")
+  ;;(message "force-reverting value is %s" force-reverting)
+  (if (or force-reverting (not (buffer-modified-p)))
+      (revert-buffer :ignore-auto :noconfirm)
+    (error "The buffer has been modified")))
+
+;; Cmd + rで再読み込み
+(global-set-key (kbd "s-r") 'revert-buffer-no-confirm)
+
+;; 選択して上書き可能
+(delete-selection-mode t)
+
+;; やり直しはCmd + Shift + z
+(require 'redo)
+(global-set-key (kbd "s-Z") 'redo)
 
 ;; =========================================================
 ;; 特殊なモード
@@ -218,7 +267,7 @@
 (require 'auto-install)
 
 ;; 起動時にEmcsWikiのページ名を補完候補に加える
-(auto-install-update-emacswiki-package-name t)
+;;(auto-install-update-emacswiki-package-name t)
 
 ;; install-elisp.el互換モードにする
 (auto-install-compatibility-setup)
@@ -418,3 +467,79 @@ mouse-3: delete other windows"
 (put 'downcase-region 'disabled nil)
 
 (put 'upcase-region 'disabled nil)
+
+
+;;
+;; auto-complete.el - IDEのような入力支援
+;;
+;; ______________________________________________________________________
+
+(require 'auto-complete-config)
+(global-auto-complete-mode 1)
+
+;;
+;; anything.el
+;;
+;; ______________________________________________________________________
+
+(require 'anything-startup)
+(define-key global-map (kbd "C-l") 'anything) 
+
+;;
+;; migemo - ローマ字のまま日本語をインクリメンタルサーチする（なんか動かない）
+;;
+;; ______________________________________________________________________
+
+(add-to-list 'load-path "~/.emacs.d/migemo-0.40")
+(load "migemo.el.in")
+
+
+;;
+;; Proof General
+;;
+;; ______________________________________________________________________
+
+ (load-file "/usr/share/emacs/site-lisp/ProofGeneral-4.2/generic/proof-site.el")
+
+(setq coq-prog-name "/opt/local/bin/coqtop")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; append-tuareg.el - Tuareg quick installation: Append this file to .emacs.
+
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/tuareg-2.0.6/")
+(setq tuareg-library-path "/opt/local/bin")
+
+;;(add-to-list 'load-path "/usr/share/emacs/site-lisp")
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'camldebug "ocamldebug" "Run the Caml debugger" t)
+(setq auto-mode-alist
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
+
+(setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin/"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; setting for Japanese character coding
+
+(modify-coding-system-alist 'file "\\.ml\\w?" 'euc-jp-unix)
+
+
+;;
+;; Undo Tree
+;;
+;; ______________________________________________________________________
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+
+
+;;
+;;php-mode
+;;
+;; ______________________________________________________________________
+
+(add-to-list 'load-path "~/.emacs.d/php-mode-1.13.1/")
+(load-library "php-mode")
+(require 'php-mode)

@@ -1,0 +1,4 @@
+which ocamllex
+coqc Basics.v
+make
+make
