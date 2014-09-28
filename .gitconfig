@@ -5,11 +5,11 @@
 	editor = emacs
     excludesfile = ~/.gitignore
 [alias]
-    st = status
 	co = checkout
 	ci = commit
 	aa = add --all
 	br = branch
     gr = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+    st = status
 [color]
 	ui = auto
