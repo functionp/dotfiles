@@ -3,13 +3,13 @@
 	email = functionp@gmail.com
 [core]
 	editor = emacs
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
-	ci = commit
+	ci = commit -m
 	aa = add --all
 	br = branch
-    gr = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-    st = status
+	gr = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+	st = status
 [color]
 	ui = auto

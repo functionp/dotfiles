@@ -1,3 +1,9 @@
+/Users/hiroki/myrepos/dotfiles/.gitconfig
+/Users/hiroki/myrepos/dotfiles/#.gitconfig#
+/Users/hiroki/python/layout/layout.py
+/Users/hiroki/python/layout/#layout.py#
+/Users/hiroki/python/layout/rule.py
+/Users/hiroki/python/layout/#rule.py#
 /Users/hiroki/python/layout/optimization.py
 /Users/hiroki/python/layout/#optimization.py#
 /Users/hiroki/python/layout/specification.py
@@ -8,7 +14,3 @@
 /Users/hiroki/python/layout/#unittests.py#
 /Users/hiroki/python/layout/condition.py
 /Users/hiroki/python/layout/#condition.py#
-/Users/hiroki/python/layout/rule.py
-/Users/hiroki/python/layout/#rule.py#
-/Users/hiroki/python/layout/layout.py
-/Users/hiroki/python/layout/#layout.py#
