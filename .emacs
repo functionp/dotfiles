@@ -117,7 +117,8 @@
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
 
-;;(global-set-key (kbd "C-i") 'goto-line)
+;; 指定行へジャンプ
+(global-set-key (kbd "C-x p") 'goto-line)
 
 ;; =========================================================
 ;;  トラックパッドスクロール設定
@@ -494,16 +495,6 @@ mouse-3: delete other windows"
 (load "migemo.el.in")
 
 
-;;
-;; Proof General
-;;
-;; ______________________________________________________________________
-
- (load-file "/usr/share/emacs/site-lisp/ProofGeneral-4.2/generic/proof-site.el")
-
-(setq coq-prog-name "/opt/local/bin/coqtop")
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; append-tuareg.el - Tuareg quick installation: Append this file to .emacs.
 
@@ -533,6 +524,8 @@ mouse-3: delete other windows"
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+(global-set-key (kbd "C-x p") 'goto-line)
+
 
 
 ;;
@@ -543,3 +536,13 @@ mouse-3: delete other windows"
 (add-to-list 'load-path "~/.emacs.d/php-mode-1.13.1/")
 (load-library "php-mode")
 (require 'php-mode)
+
+;;
+;; Proof General
+;;
+;; ______________________________________________________________________
+
+;; (load-file "/usr/share/emacs/site-lisp/ProofGeneral-4.2/generic/proof-site.el")
+
+;; (setq coq-prog-name "/opt/local/bin/coqtop")
+
