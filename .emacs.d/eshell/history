@@ -2,3 +2,9 @@ which ocamllex
 coqc Basics.v
 make
 make
+python main.pyc
+python main.pyc
+python main.pyc
+py
+which ocamllex
+git gr

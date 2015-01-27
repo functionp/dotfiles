@@ -154,6 +154,8 @@
 (global-set-key (kbd "s-2") 'split-window-vertically)
 (global-set-key (kbd "s-3") 'split-window-horizontally)
 
+;; シェルを起動
+(global-set-key (kbd "C-x t") 'term)
 
 ;; =========================================================
 ;; テキスト編集
