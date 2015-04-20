@@ -1,17 +1,16 @@
-
 ;; =========================================================
 ;; 環境設定
 ;; =========================================================
 
 ;; ロードパス
-(add-to-list 'load-path "~/.emacs.d/")
+;;(add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (setq load-path (cons "/Applications/Emacs.app/Contents/Resources/site-lisp" load-path))
 (setq load-path (cons "/Applications/Emacs.app/Contents/Resources/site-lisp" load-path))
 (setq *site-lisp* "/Applications/Emacs.app/Contents/Resources/site-lisp")
 
 ;; 行数表示
-(require 'linum)
+;;(require 'linum)
 (global-linum-mode)
 (setq linum-format "%5d")
 (line-number-mode t)
@@ -205,10 +204,6 @@
 ;; 選択して上書き可能
 (delete-selection-mode t)
 
-;; やり直しはCmd + Shift + z
-(require 'redo)
-(global-set-key (kbd "s-Z") 'redo)
-
 ;; =========================================================
 ;; 特殊なモード
 ;; =========================================================
@@ -265,8 +260,8 @@
 ;; (install-elisp "http://www.emacswiki.org/emacs/auto-install.el")
 ;; ______________________________________________________________________
 
-;; デフォルトは ~/.emacs.d/auto-install/
-(add-to-list 'load-path "~/.emacs.d/auto-install/")
+;; デフォルトは ~/.emacs.d/plugins/auto-install/
+(add-to-list 'load-path "~/.emacs.d/plugins/auto-install/")
 (require 'auto-install)
 
 ;; 起動時にEmcsWikiのページ名を補完候補に加える
@@ -493,7 +488,7 @@ mouse-3: delete other windows"
 ;;
 ;; ______________________________________________________________________
 
-(add-to-list 'load-path "~/.emacs.d/migemo-0.40")
+(add-to-list 'load-path "~/.emacs.d/plugins/migemo-0.40")
 (load "migemo.el.in")
 
 
@@ -525,17 +520,14 @@ mouse-3: delete other windows"
 ;; ______________________________________________________________________
 (require 'undo-tree)
 (global-undo-tree-mode)
-
-(global-set-key (kbd "C-x p") 'goto-line)
-
-
+(global-set-key (kbd "s-Z") 'undo-tree-redo)
 
 ;;
 ;;php-mode
 ;;
 ;; ______________________________________________________________________
 
-(add-to-list 'load-path "~/.emacs.d/php-mode-1.13.1/")
+(add-to-list 'load-path "~/.emacs.d/plugins/php-mode-1.13.1/")
 (load-library "php-mode")
 (require 'php-mode)
 
