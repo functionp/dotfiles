@@ -208,11 +208,18 @@
 ;; 特殊なモード
 ;; =========================================================
 
+;; matlab mode
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; 拡張子設定
 (setq auto-mode-alist
       (append '(("\\.ctp$" . html-mode)
+                ("\\.pl$" . prolog-mode)
+                ("\\.m$" . matlab-mode)
                 ("\\.lisp$" . lisp-mode))
               auto-mode-alist))
+
 
 ;; フルスクリーンモード
 (defun fullscreen-mode ()
@@ -227,7 +234,7 @@
 ;; diredモードの設定
 ;; =========================================================
 
-; diredでマークをつけたファイルを開く
+; diredでマークをつけたファイルを開く(mでマークつけてFで開く)
 (eval-after-load "dired"
   '(progn
      (define-key dired-mode-map (kbd "F") 'my-dired-find-marked-files)
@@ -235,7 +242,8 @@
        "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
        (interactive "P")
        (let* ((fn-list (dired-get-marked-files nil arg)))
-         (mapc 'find-file fn-list)))))
+         (mapc 'find-file fn-list)
+         (delete-other-windows)))))
 
 ;; diredでマークをつけたファイルをviewモードで開く
 (eval-after-load "dired"
@@ -248,6 +256,7 @@
          (mapc 'view-file fn-list)))))
 
 ;; rでwdiredモードに入る ディレクトリをバッファのように編集できる
+;; 終了時は C-c C-c
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
@@ -384,6 +393,15 @@ mouse-3: delete other windows"
 (setq tabbar-help-on-tab-function 'my-tabbar-buffer-help-on-tab)
 (setq tabbar-select-tab-function 'my-tabbar-buffer-select-tab)
 
+
+
+;;
+;; aspell - スペルチェック
+;;
+;; ______________________________________________________________________
+
+
+(setq-default ispell-program-name "/usr/local/bin/aspell")
 
 ;;
 ;; grep-edit - 複数ファイルの置換を可能にする
@@ -531,12 +549,14 @@ mouse-3: delete other windows"
 (load-library "php-mode")
 (require 'php-mode)
 
+
+
 ;;
 ;; Proof General
 ;;
 ;; ______________________________________________________________________
 
-;; (load-file "/usr/share/emacs/site-lisp/ProofGeneral-4.2/generic/proof-site.el")
+(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 ;; (setq coq-prog-name "/opt/local/bin/coqtop")
 
