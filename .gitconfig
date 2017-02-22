@@ -5,10 +5,14 @@
 	editor = emacs
 	excludesfile = ~/.gitignore
 [alias]
+	ps = push origin
+	pl = pull origin
+    ft = fetch origin
 	co = checkout
 	ci = commit -m
 	aa = add --all
 	br = branch
+    dl = branch -D
 	gr = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 	st = status
 [color]

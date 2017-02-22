@@ -116,9 +116,6 @@
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
 
-;; 指定行へジャンプ
-(global-set-key (kbd "C-x p") 'goto-line)
-
 ;; =========================================================
 ;;  トラックパッドスクロール設定
 ;; =========================================================
@@ -147,6 +144,8 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
 
+(global-set-key (kbd "s-b") 'switch-to-buffer)
+
 ;; ウィンドウ系の操作をコマンドキーで
 (global-set-key (kbd "s-0") 'delete-window)
 (global-set-key (kbd "s-1") 'delete-other-window)
@@ -155,6 +154,12 @@
 
 ;; シェルを起動
 (global-set-key (kbd "C-x t") 'term)
+
+;; 指定行へジャンプ
+(global-set-key (kbd "C-x p") 'goto-line)
+
+;; Desktopロード
+(global-set-key (kbd "C-c C-r") 'desktop-read)
 
 ;; =========================================================
 ;; テキスト編集
@@ -211,6 +216,8 @@
 ;; matlab mode
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 ;; 拡張子設定
 (setq auto-mode-alist
@@ -532,10 +539,41 @@ mouse-3: delete other windows"
 (modify-coding-system-alist 'file "\\.ml\\w?" 'euc-jp-unix)
 
 
+
+;;
+;; PEP8
+;;
+;; ______________________________________________________________________
+
+(setenv "PATH" (concat (getenv "PATH") ":/Users/hiroki/.custom_commands/"))
+(setenv "PATH" (concat (getenv "PATH") ":/Users/hiroki/.pyenv/shims/"))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin/"))
+
+(custom-set-variables
+  '(py-pychecker-command "pep8")
+  '(py-pychecker-command-args (quote ("")))
+  '(python-check-command "pep8")
+  )
+
+(setq python-check-command "pep8")
+
+(global-set-key (kbd "C-c C-w") 'python-check)
+
+(setq py-autopep8-options '("--max-line-length=120"))
+(setq flycheck-flake8-maximum-line-length 120)
+
+(require 'py-autopep8)
+(global-set-key (kbd "C-c g") 'py-autopep8)          ; バッファ全体のコード整形
+(global-set-key (kbd "C-c f") 'py-autopep8-region)   ; 選択リジョン内のコード整形
+
+;; 保存時にバッファ全体を自動整形する
+;; (add-hook 'before-save-hook 'py-autopep8-before-save)
+
 ;;
 ;; Undo Tree
 ;;
 ;; ______________________________________________________________________
+
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "s-Z") 'undo-tree-redo)
@@ -556,7 +594,7 @@ mouse-3: delete other windows"
 ;;
 ;; ______________________________________________________________________
 
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+;; (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 ;; (setq coq-prog-name "/opt/local/bin/coqtop")
 

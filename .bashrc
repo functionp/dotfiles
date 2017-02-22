@@ -1,6 +1,8 @@
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/sicstus4.3.2/bin/
+PATH=$PATH:/usr/local/
+PATH=$PATH:/usr/local/bin/
+PATH=$PATH:/Users/hiroki/.custom_commands/
 
 alias javac='javac -J-Dfile.encoding=UTF-8'
 export PGHOME=/usr/share/emacs/site-lisp/ProofGeneral-4.2
@@ -21,3 +23,10 @@ export PATH="${JENAROOT}/bin:${PATH}"
 
 # start mysql server
 alias start_mysql="/usr/local/bin/mysql.server start"
+alias mypep8='pep8 --config ~/python/scouty/pep8.config'
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"

@@ -1,0 +1,437 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Feb  6 13:53:01 2017
+;; Desktop file format version 206
+;; Emacs version 24.5.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22680 301 555670 0) (desktop . "206") "hiroki@macbookair-2.local" nil nil ((((font-backend mac-ct ns) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (foreground-color . "White") (background-color . "Black") (line-spacing) (left-fringe . 10) (right-fringe . 11) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (alpha 0.95 0.95) (fullscreen) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "Red") (environment) (frameset--id . "443F-D1FD-23CD-4A1C") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "macbookair-2.local") (explicit-name) (tool-bar-position . top) (height . 60) (width . 200) (left . 0) (top . 23)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 56) (min-pixel-width . 70) (min-pixel-height-ignore . 56) (min-pixel-width-ignore . 56) (min-pixel-height-safe . 14) (min-pixel-width-safe . 14)) leaf (pixel-width . 1436) (pixel-height . 826) (total-width . 205) (total-height . 59) (normal-height . 1.0) (normal-width . 1.0) (buffer "scoutytags.py" (selected . t) (hscroll . 0) (fringes 10 11 nil) (margins 5) (scroll-bars 15 3 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("update_" "get_even" "recommend" "lcontains" "Candi" "reg" "indes" "web" "mail" "temp" "dict" "for " "Unified" "query" "unified" "scout"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/" "~/python/scouty/static/html/503.html" "~/python/scouty/static/html/502.html" "~/python/scouty/static/html/50x.html" "~/python/scouty/static/html" "~/python/scouty/lp/templates/candidates_faq.html" "~/python/scouty/service/tests/unit/test_matching.py" "~/.emacs.d/" "~/python/scouty"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/templatetags/scoutytags.py"
+  "scoutytags.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "templatetags"
+  'dired-mode
+  '(linum-mode)
+  449
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/service/templatetags/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "service"
+  'dired-mode
+  '(linum-mode)
+  1176
+  '(861 nil)
+  t
+  '("/Users/hiroki/python/scouty/service/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/templates/scout_detail.html"
+  "scout_detail.html"
+  'html-mode
+  '(linum-mode zencoding-mode yas/minor-mode undo-tree-mode)
+  7335
+  '(6619 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/backend/matching.py"
+  "matching.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  5596
+  '(5553 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/models.py"
+  "models.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  25362
+  '(25296 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/models.py"
+  "models.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  5728
+  '(5955 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/backend/unifier.py"
+  "unifier.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/tests/unit/test_matching.py"
+  "test_matching.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  816
+  '(816 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "unit"
+  'dired-mode
+  '(linum-mode)
+  447
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/service/tests/unit/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "tests"
+  'dired-mode
+  '(linum-mode)
+  557
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/service/tests/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/lp/models.py"
+  "models.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1018
+  '(1360 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/scouty/general.py"
+  "general.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  15785
+  '(12353 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "static"
+  'dired-mode
+  '(linum-mode)
+  526
+  '(476 nil)
+  t
+  '("/Users/hiroki/python/scouty/static/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "templates"
+  'dired-mode
+  '(linum-mode)
+  324
+  '(538 nil)
+  t
+  '("/Users/hiroki/python/scouty/lp/templates/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "lp"
+  'dired-mode
+  '(linum-mode)
+  785
+  '(239 nil)
+  t
+  '("/Users/hiroki/python/scouty/lp/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/tests/unit/test_models.py"
+  "test_models.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  3219
+  '(6891 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "unit"
+  'dired-mode
+  '(linum-mode)
+  452
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/crawler/tests/unit/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/tests/unit/test_search.py"
+  "test_search.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  471
+  '(635 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/tests/integrated/test_scout.py"
+  "test_scout.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  388
+  '(292 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "integrated"
+  'wdired-mode
+  '(linum-mode)
+  272
+  '(272 nil)
+  nil
+  '("/Users/hiroki/python/scouty/crawler/tests/integrated/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/tests/factory.py"
+  "factory.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  18700
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/scouty/urls.py"
+  "urls.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1303
+  '(1303 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "scouty"
+  'dired-mode
+  '(linum-mode)
+  1544
+  '(1216 nil)
+  t
+  '("/Users/hiroki/python/scouty/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "tests"
+  'dired-mode
+  '(linum-mode)
+  439
+  '(1 nil)
+  t
+  '("/Users/hiroki/python/scouty/crawler/tests/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/views.py"
+  "views.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  39662
+  '(18152 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/views.py"
+  "views.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  9277
+  '(8731 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "integrated"
+  'dired-mode
+  '(linum-mode)
+  872
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/service/tests/integrated/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/scouty/settings.py"
+  "settings.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "__pycache__"
+  'dired-mode
+  '(linum-mode)
+  261
+  '(nil nil)
+  t
+  '("/Users/hiroki/python/scouty/crawler/tests/__pycache__/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/service/tests/factory.py"
+  "factory.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  2319
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "templates"
+  'dired-mode
+  '(linum-mode)
+  1388
+  '(1269 nil)
+  t
+  '("/Users/hiroki/python/scouty/service/templates/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "crawler"
+  'dired-mode
+  '(linum-mode)
+  986
+  '(565 nil)
+  t
+  '("/Users/hiroki/python/scouty/crawler/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "backend"
+  'dired-mode
+  '(linum-mode)
+  905
+  '(255 nil)
+  t
+  '("/Users/hiroki/python/scouty/service/backend/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "scouty"
+  'dired-mode
+  '(linum-mode)
+  1227
+  '(1427 nil)
+  t
+  '("/Users/hiroki/python/scouty/scouty/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "backend"
+  'dired-mode
+  '(linum-mode)
+  1793
+  '(1984 nil)
+  t
+  '("/Users/hiroki/python/scouty/crawler/backend/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/crawler/backend/scraper.py"
+  "scraper.py"
+  'python-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/hiroki/python/scouty/static/scouty/css/structure.css"
+  "structure.css"
+  'css-mode
+  '(linum-mode yas/minor-mode auto-complete-mode undo-tree-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
